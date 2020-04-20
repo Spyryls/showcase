@@ -1,0 +1,120 @@
+body, html {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  height: 100%;
+  color: black;
+  line-height: 1.8;
+
+}
+
+/*
+.wide {
+    letter-spacing: 10px;
+}
+.hover-pointer {
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
+
+.card {
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+.header h1 {
+  font-size: 40px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a.right {
+  float: right;
+}
+
+.navbar a:hover {
+  text-shadow: white;
+  color: white;
+}
+
+.row {
+  display: -ms-flexbox; */
+/* IE10 *//*
+
+  display: flex;
+  -ms-flex-wrap: wrap; */
+/* IE10 *//*
+
+  flex-wrap: wrap;
+}
+
+*/
+/* Parallax Effect *//*
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.grid
+
+*/
+/* First image (Introduction) *//*
+
+.bgimg-1 {
+  background-image: "images/self.jpg";
+  min-height: 100%;
+}
+
+*/
+/* Second image (Portfolio) *//*
+
+.bgimg-2 {
+  background-image: "images/weeping_vintage.jpg";
+  min-height: 400px;
+}
+
+*/
+/* Third image (Contact) *//*
+
+.bgimg-3 {
+  background-image: "images/whiskey_table.jpg";
+  min-height: 400px;
+}
+
+*/
+/* Parallax scrolling off for tablets and phones *//*
+
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}*/
