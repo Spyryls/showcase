@@ -35,7 +35,7 @@ public class LoginController {
     public String registrationPagePost (User user) {
         userRepo.save(user);
 
-        return "redirect:/register";
+        return "redirect:/home";
     }
 }
 

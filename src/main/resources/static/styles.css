@@ -1,10 +1,38 @@
 body, html {
-  font-family: "Lato", sans-serif;
-  margin: 0;
-  height: 100%;
-  color: black;
-  line-height: 1.8;
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    height: 100%;
+    color: gray;
+    line-height: 1.8;
+    background-image: url("images/weeping_vintage_bwdark.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 500px;
+}
 
+.register-container {
+    left: 50%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.register-boxes {
+
+}
+
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+.header h1 {
+  font-size: 40px;
 }
 
 /*
@@ -27,17 +55,6 @@ body, html {
   box-sizing: border-box;
 }
 
-
-.header {
-  padding: 80px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-}
-
-.header h1 {
-  font-size: 40px;
-}
 
 .navbar {
   overflow: hidden;
@@ -83,7 +100,6 @@ body, html {
   background-size: cover;
 }
 
-.grid
 
 */
 /* First image (Introduction) *//*
