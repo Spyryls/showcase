@@ -1,5 +1,5 @@
 body, html {
-    font-family: "Lato", sans-serif;
+    font-family: "minion-pro", sans-serif;
     margin: 0;
     height: 100%;
     color: gray;
@@ -25,10 +25,16 @@ body, html {
 }
 
 .header {
-  padding: 80px;
+  z-index: 1000;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
-  background: #1abc9c;
-  color: white;
+  background: transparent;
+  color: #ececec;
+  -webkit-font-smoothing: antialiased;
 }
 
 .header h1 {
