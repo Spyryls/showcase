@@ -19,6 +19,12 @@ public class User extends AbstractEntity {
     @Size(min = 3, max = 50, message = "Your username must be between 3 and 50 characters.")
     private String username;
 
+    @NotNull
+    private String firstName;
+
+    @NotNull
+    private String lastName;
+
     @NotNull(message = "Email is required")
     private String email;
 
@@ -27,22 +33,26 @@ public class User extends AbstractEntity {
 
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-    public User(){
-    }
+    public User(){}
 
-    public String User(Integer id, String username, String email, String password) {
-        this.id = id;
+    public User(String username, String firstName, String lastName, String email, String password) {
         this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.pwHash = encoder.encode(password);
 
-        return username;
     }
-
 
     public Integer getId() {
         return id;
     }
+
+    public String getFirstName() { return firstName;  }
+    public void setFirstName(String firstName) { this.firstName = firstName;  }
+
+    public String getLastName() { return lastName;   }
+    public void setLastName(String lastName) { this.lastName = lastName;  }
 
     public String getUsername() { return username; }
     public void setUsername(String username) {
