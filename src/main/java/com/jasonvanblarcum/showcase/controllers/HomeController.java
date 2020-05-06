@@ -14,9 +14,9 @@ public class HomeController {
     private AuthenticationController authenticationController;
 
 
-    @GetMapping
-    public String index() {
-        return "index";
+    @GetMapping(value = "")
+    public String home() {
+        return "/home";
     }
 
 }
