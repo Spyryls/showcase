@@ -13,8 +13,18 @@ public class HomeController {
     @Autowired
     private AuthenticationController authenticationController;
 
+
     @GetMapping
-    public String displayHome(RedirectAttributes redirectAttributes) {
-        return "redirect:"; }
+    public String index() {
+        return "index";
+    }
 
 }
+
+
+/*
+    @GetMapping
+    public String displayHome(RedirectAttributes redirectAttributes) {
+        return "redirect:/home"; }
+
+}*/
