@@ -4,11 +4,13 @@ body, html {
     height: 100%;
     color: gray;
     line-height: 1.8;
-    background-image: url("images/weeping_vintage_bwdark.png");
+    background-image: url("images/self_dark_scale.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 500px;
+    height: auto;
+    max-width: 100%;
 }
 
 .register-container {
@@ -18,10 +20,6 @@ body, html {
     align-items: center;
     position: absolute;
     transform: translate(-50%, -50%);
-}
-
-.register-boxes {
-
 }
 
 .header {
@@ -47,7 +45,46 @@ body, html {
     cursor: pointer;
 }
 
-/*
+.navbar a {
+  float: left;
+  display: block;
+  color: gray;
+  text-align: left;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a.right {
+  text-align: right;
+  float: right;
+}
+
+.navbar a:hover {
+  text-shadow: white;
+  color: white;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: transparent;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: pink;
+}
+
 .wide {
     letter-spacing: 10px;
 }
@@ -67,43 +104,38 @@ body, html {
   box-sizing: border-box;
 }
 
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
 
 .navbar {
   overflow: hidden;
   background-color: #333;
 }
 
-.navbar a {
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
-.navbar a.right {
-  float: right;
-}
-
-.navbar a:hover {
-  text-shadow: white;
-  color: white;
-}
-
 .row {
-  display: -ms-flexbox; */
-/* IE10 *//*
-
+  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap; */
-/* IE10 *//*
-
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
-*/
-/* Parallax Effect *//*
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Parallax Effect */
 
 .bgimg-1, .bgimg-2, .bgimg-3 {
   background-attachment: fixed;
@@ -113,8 +145,8 @@ body, html {
 }
 
 
-*/
-/* First image (Introduction) *//*
+
+/* First image (Introduction) */
 
 .bgimg-1 {
   background-image: "images/self.jpg";
@@ -122,7 +154,7 @@ body, html {
 }
 
 */
-/* Second image (Portfolio) *//*
+/* Second image (Portfolio) */
 
 .bgimg-2 {
   background-image: "images/weeping_vintage.jpg";
@@ -130,7 +162,7 @@ body, html {
 }
 
 */
-/* Third image (Contact) *//*
+/* Third image (Contact) */
 
 .bgimg-3 {
   background-image: "images/whiskey_table.jpg";
@@ -138,11 +170,17 @@ body, html {
 }
 
 */
-/* Parallax scrolling off for tablets and phones *//*
+/* Parallax scrolling off for tablets and phones */
 
 @media only screen and (max-device-width: 1600px) {
+
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+
   .bgimg-1, .bgimg-2, .bgimg-3 {
     background-attachment: scroll;
     min-height: 400px;
   }
-}*/
+}

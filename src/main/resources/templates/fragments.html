@@ -3,6 +3,7 @@
 <head>
     <div th:fragment="head">
         <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>J. VANBLARCUM</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -12,8 +13,18 @@
 
 <body>
 <header th:fragment="header">
-    <div
+    <body>
+    <nav th:fragment = "navigation">
+        <h1 th:text = "${title}">J. VANBLARCUM</h1>
+        <ul class="navbar a">
+            <ul><a class="nav-link" href="/home">HOME</a></ul>
+            <ul><a class="nav-link" href="/bio">BIO</a></ul>
+            <ul><a class="nav-link" href="/gallery">GALLERY</a></ul>
+            <ul><a class="nav-link" href="/contact">CONTACT</a></ul>
+            <ul><a class="nav-link; navbar a.right" href="/login">LOGIN</a></ul>
+        </ul>
+        <br/>
+    </nav>
 
-</header>
-</body>
+    </body>
 </html>

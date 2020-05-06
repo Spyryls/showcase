@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-@RequestMapping("home")
+@RequestMapping
 public class HomeController {
 
     @Autowired
@@ -15,6 +15,6 @@ public class HomeController {
 
     @GetMapping
     public String displayHome(RedirectAttributes redirectAttributes) {
-        return "redirect:/home"; }
+        return "redirect:"; }
 
 }
