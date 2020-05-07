@@ -2,9 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: head"></head>
 
+<header th:replace="fragments :: header"></header>
+
 <body>
-<div class="header">
-        <h1>JASON VANBLARCUM</h1>
-</div>
+<picture class="logo">
+<img th:src="@{images/aware_logo_tulip_gray.png}">
+</picture>
 </body>
 </html>

@@ -104,6 +104,11 @@ input[type=submit]:hover {
   box-sizing: border-box;
 }
 
+.logo{
+    align: center;
+    display: flex;
+}
+
 .column {
   float: left;
   width: 50%;

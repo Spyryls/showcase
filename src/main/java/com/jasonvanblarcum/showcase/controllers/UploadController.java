@@ -6,13 +6,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 
 @RestController
-@RequestMapping("/gallery")
+@RequestMapping("/forum")
 public class UploadController {
 
     private static String UPLOADED_FOLDER = "E://uploadedfiles//";
@@ -24,7 +23,7 @@ public class UploadController {
             if (!file.isEmpty()) {
                 try {
                     byte[] bytes = file.getBytes();
-                    File dir = new File(UPLOADED_FOLDER)
+                    File dir = new File(UPLOADED_FOLDER);
                     if (!dir.exists())
                         dir.mkdir();
                     File uploadedFile = new File(dir.getAbsolutePath() + File.separator + file.getOriginalFilename());
@@ -37,8 +36,6 @@ public class UploadController {
                 }
                 }
             return status;
-            }
     }
-
-
 }
+
