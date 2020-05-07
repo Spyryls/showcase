@@ -5,8 +5,40 @@
 <header th:replace="fragments :: header"></header>
 
 <body>
+<section>
 <div class="logo">
 <img th:src="@{images/aware_logo_tulip_gray.png}">
+</div>
+</section>
+
+<section>
+    <a name="contact"></a>
+<div class="container" style="background: transparent;">
+    <div style="text-align:center">
+        <p>If you are looking for a print or wanting to request an original design, feel free to contact me</p>
+    </div>
+    <div class="row">
+        <div class="column">
+            <img th:src="@{images/Blue_Cherry.jpg}">
+        </div>
+        <div class="column">
+            <form action="/action_page.php">
+                <label for="fname">First Name</label>
+                <input class="rounded" type="text" id="fname" name="firstname" placeholder="Your name..">
+                <label for="lname">Last Name</label>
+                <input class="rounded" type="text" id="lname" name="lastname" placeholder="Your last name..">
+                <label for="country">Country</label>
+                <select class="rounded" id="country" name="country">
+                    <option value="uk">United Kingdom</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+                <label for="subject">Subject</label>
+                <textarea class="rounded"  id="subject" name="subject" placeholder="Leave me a description or message.."></textarea>
+                <input class="rounded"  type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>
