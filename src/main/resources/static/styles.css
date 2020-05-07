@@ -64,6 +64,10 @@ body, html {
   color: white;
 }
 
+img {
+    width:100%;
+}
+
 input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
@@ -107,6 +111,10 @@ input[type=submit]:hover {
 .logo{
     align: center;
     display: flex;
+}
+
+textarea {
+    height:170px;
 }
 
 .column {

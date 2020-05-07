@@ -4,21 +4,19 @@
 
 <header th:replace="fragments :: header"></header>
 
-<body>
 <body class="container">
 <form method="POST" action="/gallery/uploadFile" enctype="multipart/form-data">
     <label>Select a File to Upload:
         <input type="file" name="file">
     </label>
 
-    <label>File Description:
+    <textarea>File Description:
         <input type="text" name="description">
-    </label>
+    </textarea>
 
 
 
     <input type="submit" class="btn btn-primary" value="Upload"> Upload File.
 </form>
-</body>
 </body>
 </html>
