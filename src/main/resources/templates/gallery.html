@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<header th:replace="fragments :: header"></header>
+
+<body>
+<div>
+
+    <figure class="gallery_float">
+        <img th:src="@{images/Pomegranates.jpeg}">
+        <figcaption>
+            <ul><i>The Exhaustive Narrative of Pomegranates</i>></ul>
+            <ul>Acrylic on Masonite</ul>
+            <ul>2015</ul>
+        </figcaption>
+    </figure>
+    <p>
+        A little blurb about the piece that I am not gonna write right now...
+    </p>
+</div>
+
+</body>
+<footer th:replace="fragments :: site-footer"></footer>
+</html>

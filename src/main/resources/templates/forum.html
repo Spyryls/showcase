@@ -10,11 +10,11 @@
         <input class="rounded" type="file" name="file">
     </label>
 
-    <textarea>File Description:
-        <input class="rounded" type="text" name="description">
-    </textarea>
+    <textarea class="rounded" id="subject" name="subject" placeholder="Leave me a description.."></textarea>
 
-    <input class="rounded" type="submit" class="btn btn-primary" value="Upload"> Upload File.
+    <input type="submit" class="btn btn-primary" value="Upload"> Upload File.
+
+    <footer th:replace="fragments :: site-footer"></footer>
 </form>
 </body>
 </html>

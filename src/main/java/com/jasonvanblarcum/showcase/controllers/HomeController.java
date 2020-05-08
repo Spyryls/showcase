@@ -17,7 +17,7 @@ public class HomeController {
 
 
     @GetMapping("/")
-    public String displayHomeForm(Model model) {
+    public String displayHome(Model model) {
         model.addAttribute("title", "J. VanBlarcum");
         return "home";
     }

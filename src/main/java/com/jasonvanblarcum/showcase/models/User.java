@@ -44,6 +44,22 @@ public class User extends AbstractEntity {
 
     }
 
+    //Serves to allow us to test PostServiceStubImpl ****MAKE SURE TO TAKE OUT****
+    public User(long l, String merry, Object o) {
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", pwHash='" + pwHash + '\'' +
+                '}';
+    }
+
     public Integer getId() {
         return id;
     }

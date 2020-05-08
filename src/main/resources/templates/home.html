@@ -15,6 +15,7 @@
     <a name="contact"></a>
 <div class="container" style="background: transparent;">
     <div style="text-align:center">
+        <div th:text="${date}"></div>
         <p>If you are looking for a print or wanting to request an original design, feel free to contact me</p>
     </div>
     <div class="row">
@@ -41,4 +42,6 @@
     </div>
 </div>
 </body>
+
+<footer th:replace="fragments :: site-footer"></footer>
 </html>
