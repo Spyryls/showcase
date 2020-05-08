@@ -1,16 +1,13 @@
 body, html {
     font-family: "minion-pro", sans-serif;
     margin: 0;
-    height: 100%;
     color: gray;
-    line-height: 1.8;
     background-image: url("images/self_dark_scale.jpg");
     background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;
     min-height: 500px;
     height: auto;
-    max-width: 100%;
+    width: 100%;
 }
 
 .register-container {
@@ -61,7 +58,7 @@ body, html {
 
 .navbar a:hover {
   text-shadow: white;
-  color: white;
+  color: #FFC2CD;
 }
 
 .rounded {
