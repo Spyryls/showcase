@@ -1,6 +1,7 @@
 package com.jasonvanblarcum.showcase.controllers;
 
 import com.jasonvanblarcum.showcase.models.Post;
+import com.jasonvanblarcum.showcase.services.NotificationService;
 import com.jasonvanblarcum.showcase.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,9 +15,16 @@ public class PostController {
     @Autowired
     private PostService postService;
 
+    @Autowired
+    private NotificationService notifyService;
+
     @RequestMapping("/post/view/{id}")
     public String view(@PathVariable("id") Long id, Model model) {
         Post post = postService.findById(id);
+        if (post == null) {
+            notifyService.addErrorMessage("Cannot find post#" + id);
+            return "redirect:/";
+        }
         model.addAttribute("post", post);
         model.addAttribute("title", "Posts");
         return "posts/view";

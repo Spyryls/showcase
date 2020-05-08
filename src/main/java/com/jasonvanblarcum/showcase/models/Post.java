@@ -1,24 +1,27 @@
 package com.jasonvanblarcum.showcase.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table
 public class Post{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false, length = 300)
     private String title;
 
+    @Lob
+    @Column(nullable = false)
     private String body;
 
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private User author;
 
+    @Column(nullable = false)
     private Date date = new Date();
 
     public Post(){}

@@ -122,6 +122,6 @@ public class AuthenticationController {
 
         setUserInSession(request.getSession(), theUser);
 
-        return "redirect:/home";
+        return "redirect:/";
     }
 }
