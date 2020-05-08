@@ -4,7 +4,15 @@
     <div th:fragment="head">
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>J. VANBLARCUM</title>
+        <title>J. VANBLARCUM
+            <div id="logged-in-info" style="text-align: right">
+                <span>Welcome, (user)
+                <form method="post" th:action="@{/users/logout}">
+                    <input type="submit" value="Logout"/>
+                </form>
+                </span>
+            </div>
+        </title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" th:href="@{/styles.css}">
@@ -23,11 +31,6 @@
             <ul><a class="nav-link" href="../#contact">CONTACT</a></ul>
             <ul><a class="nav-link" href="/forum">FORUM</a></ul>
             <ul><a class="nav-link" href="/login">LOGIN</a></ul>
-            <div id="logged-in-info"><span>Welcome, (user)</span>
-                <form method="post" th:action="@{/users/logout}">
-                    <input type="submit" value="Logout"/>
-                </form>
-            </div>
         </ul>
         <br/>
     </nav>

@@ -78,7 +78,30 @@ figure {
     margin: -50px auto 20px auto;
 }
 
+body>aside {
+    float: right;
+    width:200px;
+    background: transparent;
+    padding: 15px;
+    margin=left: 20px;
+    margin-top: 10px;
+}
 
+body>aside h2 {
+    margin: 5px 0 px 15px 0px;
+}
+
+body>aside a {
+    display: block;
+    margin: 5px 0px;
+    text-decoration: none;
+}
+
+body>main:after {
+    content: '';
+    display: block;
+    clear: both;
+}
 
 footer {
     color: #FFC2CD;
