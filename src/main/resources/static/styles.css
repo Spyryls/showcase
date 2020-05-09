@@ -5,7 +5,8 @@ body, html {
     background-image: url("images/self_dark_scale.jpg");
     background-attachment: fixed;
     background-size: cover;
-    min-height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
     height: auto;
     width: 100%;
 }
@@ -36,6 +37,10 @@ body, html {
   font-size: 40px;
 }
 
+.title {
+    background-color: black;
+}
+
 .form-control, .form-group {
     margin: 3px;
     padding: 10px;
@@ -45,6 +50,7 @@ body, html {
 .navbar a {
   float: left;
   display: block;
+  background: transparent;
   color: gray;
   text-align: left;
   padding: 14px 20px;

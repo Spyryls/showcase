@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<header th:replace="fragments :: header"></header>
+
+<body class="container">
+<form method="POST" action="/gallery/uploadFile" enctype="multipart/form-data">
+    <label>Select a File to Upload:
+        <input class="rounded" type="file" name="file">
+    </label>
+
+    <textarea class="rounded" id="subject" name="subject" placeholder="Description"></textarea>
+
+    <input type="submit" class="btn btn-primary" value="Upload"><br/>
+</form>
+
+<footer th:replace="fragments :: site-footer"></footer>
+
+</body>
+</html>

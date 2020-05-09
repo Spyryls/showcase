@@ -5,17 +5,8 @@
 <header th:replace="fragments :: header"></header>
 
 <body class="container">
-<form method="POST" action="/gallery/uploadFile" enctype="multipart/form-data">
-    <label>Select a File to Upload:
-        <input class="rounded" type="file" name="file">
-    </label>
 
-    <textarea class="rounded" id="subject" name="subject" placeholder="Leave me a description.."></textarea>
-
-    <input type="submit" class="btn btn-primary" value="Upload"><br/>
-
-    <a href="/posts/view" style="color: #FFC2CD;">View Current Posts</a>
-</form>
+<a href="/posts/upload" style="color: #FFC2CD;">Upload New Media</a>
 
 <footer th:replace="fragments :: site-footer"></footer>
 

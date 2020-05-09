@@ -26,7 +26,7 @@ public class User extends AbstractEntity {
     private String lastName;
 
     @NotNull(message = "Email is required")
-    private String email;
+    private String contactEmail;
 
     @NotNull(message = "Password is required")
     private String pwHash;
@@ -35,18 +35,18 @@ public class User extends AbstractEntity {
 
     public User(){}
 
-    public User(String username, String firstName, String lastName, String email, String password) {
+    public User(String username, String firstName, String lastName, String contactEmail, String password) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.contactEmail = contactEmail;
         this.pwHash = encoder.encode(password);
 
     }
 
-    //Serves to allow us to test PostServiceStubImpl ****MAKE SURE TO TAKE OUT****
+/*    //Serves to allow us to test PostServiceStubImpl ****MAKE SURE TO TAKE OUT****
     public User(long l, String merry, Object o) {
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -55,7 +55,7 @@ public class User extends AbstractEntity {
                 ", username='" + username + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
+                ", contactEmail='" + contactEmail + '\'' +
                 ", pwHash='" + pwHash + '\'' +
                 '}';
     }
@@ -75,11 +75,11 @@ public class User extends AbstractEntity {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getContactEmail() {
+        return contactEmail;
     }
-    public void setEmail(String email) {
-        this.email = email;
+    public void setContactEmail(String contactEmail) {
+        this.contactEmail = contactEmail;
     }
 
     public boolean isMatchingPassword(String password) {return encoder.matches(password, pwHash);}
