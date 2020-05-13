@@ -13,7 +13,7 @@ public class Post{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String title;
+    private String subject;
 
     private String body;
 
@@ -23,9 +23,9 @@ public class Post{
 
     public Post(){}
 
-    public Post(Long id, String title, String body, User author) {
+    public Post(Long id, String subject, String body, User author) {
         this.id = id;
-        this.title = title;
+        this.subject = subject;
         this.body = body;
         this.author = author;
     }
@@ -34,7 +34,7 @@ public class Post{
     public String toString() {
         return "Post{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
+                ", subject='" + subject + '\'' +
                 ", body='" + body + '\'' +
                 ", author=" + author +
                 ", date=" + date +
@@ -49,12 +49,12 @@ public class Post{
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public String getBody() {
