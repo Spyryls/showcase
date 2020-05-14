@@ -28,9 +28,10 @@ public class ForumController {
         return "forum";
     }
 
+    @GetMapping("/upload")
     public String displayCreatePost(Model model) {
         model.addAttribute("title", "Create Post");
         model.addAttribute(new Post());
-        return "posts/create";
+        return "Posts/create";
     }
 }
