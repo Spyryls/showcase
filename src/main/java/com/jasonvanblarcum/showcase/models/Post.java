@@ -7,11 +7,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Post{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Post extends AbstractEntity{
 
     private String subject;
 
@@ -23,8 +19,7 @@ public class Post{
 
     public Post(){}
 
-    public Post(Long id, String subject, String body, User author) {
-        this.id = id;
+    public Post(String subject, String body, User author) {
         this.subject = subject;
         this.body = body;
         this.author = author;
@@ -33,7 +28,6 @@ public class Post{
     @Override
     public String toString() {
         return "Post{" +
-                "id=" + id +
                 ", subject='" + subject + '\'' +
                 ", body='" + body + '\'' +
                 ", author=" + author +
@@ -41,13 +35,6 @@ public class Post{
                 '}';
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getSubject() {
         return subject;

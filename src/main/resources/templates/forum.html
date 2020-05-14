@@ -6,6 +6,27 @@
 
 <body class="container">
 
+<table class="table table-striped">
+
+    <thead>
+    <tr>
+        <th>USER NAME</th>
+        <th>SUBJECT</th>
+        <th>POST</th>
+        <th>ACTION</th>
+    </tr>
+    </thead>
+
+    <tr th:each="post : ${posts}">
+        <td th:text = "${post.author}"></td>
+        <td th:text = "${post.subject}"></td>
+        <td th:text = "${post.body}"></td>
+
+        <td><a th:href="@{/posts/edit/{id}(id=${post.id})}">EDIT</a></td>
+    </tr>
+
+</table>
+
 <a href="/posts/upload" style="color: #FFC2CD;">Upload New Media</a>
 
 <footer th:replace="fragments :: site-footer"></footer>

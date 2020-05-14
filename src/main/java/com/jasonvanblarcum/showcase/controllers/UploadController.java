@@ -1,6 +1,9 @@
 package com.jasonvanblarcum.showcase.controllers;
 
 
+import com.jasonvanblarcum.showcase.data.ArtworkRepository;
+import com.jasonvanblarcum.showcase.data.PostRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,12 +16,15 @@ import java.io.FileOutputStream;
 @RequestMapping
 public class UploadController {
 
+    @Autowired
+    private ArtworkRepository artworkRepository;
+
     private static String UPLOADED_FOLDER = "E://uploadedfiles//";
 
     @GetMapping("/posts/upload")
     public String displayUpload(Model model) {
         model.addAttribute("subject", "Upload");
-        return "posts/upload";
+        return "poets/upload";
     }
 
     @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
