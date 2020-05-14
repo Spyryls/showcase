@@ -27,4 +27,10 @@ public class ForumController {
         model.addAttribute("latest3posts", latest3Posts);
         return "forum";
     }
+
+    public String displayCreatePost(Model model) {
+        model.addAttribute("title", "Create Post");
+        model.addAttribute(new Post());
+        return "posts/create";
+    }
 }

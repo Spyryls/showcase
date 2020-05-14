@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<header th:replace="fragments :: header"></header>
+
+<body>
+
+<form method="post">
+
+    <div class="form-group">
+        <label>POST:
+            <input type="text" th:field="${post.subject}" class="form-control"/>
+        </label>
+        <span class="error" th:errors="${post.subject}"></span>
+    </div>
+
+    <div class="form-group">
+        <label>POST:
+            <input type="textarea" th:field="${post.body}" class="form-control"/>
+        </label>
+        <span class="error" th:errors="${post.body}"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Submit Post" class="btn btn-success">
+        <input type="reset" value="Discard" class="btn btn-danger">
+    </div>
+
+</form>
+
+</body>
+</html>
