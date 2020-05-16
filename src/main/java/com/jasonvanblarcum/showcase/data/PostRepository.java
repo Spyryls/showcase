@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface PostRepository extends JpaRepository <Post, Integer>{
 
-//    List<Post> findAll();
+/*    List<Post> findAllByUserId(int userId);*/
 //    List<Post> findLatest5();
 //    Post findById(Long id);
 //    Post create(Post post);

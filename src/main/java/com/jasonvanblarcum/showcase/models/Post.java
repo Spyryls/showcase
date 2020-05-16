@@ -9,6 +9,10 @@ import java.util.Date;
 @Entity
 public class Post extends AbstractEntity{
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    private Integer id;
+
     private String subject;
 
     private String body;

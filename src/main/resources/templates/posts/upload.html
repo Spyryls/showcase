@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body class="container">
 
 <header th:replace="fragments :: header"></header>
 
-<body>
-<div class="container" style="background: transparent;">
+<body class="container">
 <form method="POST" action="/upload/uploadFile" enctype="multipart/form-data">
     <label>Select a File to Upload:
         <input class="rounded" type="file" name="file">
@@ -18,22 +16,8 @@
 
     <input type="submit" class="btn btn-primary" value="Upload">Click to Upload File<br/>
 </form>
-</div>
-<div class="container" style="background: transparent;">
 
-    <figure class="gallery_float">
-        <img th:src="@{images/Pomegranates.jpeg}">
-        <figcaption>
-            <ul><i>The Exhaustive Tyranny of Pomegranates</i>></ul>
-            <ul>Acrylic on Masonite</ul>
-            <ul>2015</ul>
-        </figcaption>
-    </figure>
-    <p>
-        A little blurb about the piece that I am not gonna write right now...
-    </p>
-</div>
+<footer th:replace="fragments :: site-footer"></footer>
 
 </body>
-<footer th:replace="fragments :: site-footer"></footer>
 </html>

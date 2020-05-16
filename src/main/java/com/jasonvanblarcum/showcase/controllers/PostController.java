@@ -16,7 +16,7 @@ public class PostController {
     @Autowired
     private PostRepository postRepository;
 
-    @RequestMapping("/post/view/{id}")
+    @RequestMapping("/forum/{id}")
     public String view(@PathVariable("id") Integer id, Model model) {
         Optional post = postRepository.findById(id);
         model.addAttribute("post", post);

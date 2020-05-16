@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 @RestController
-@RequestMapping
+@RequestMapping("/posts/upload")
 public class UploadController {
 
     @Autowired
@@ -21,10 +21,9 @@ public class UploadController {
 
     private static String UPLOADED_FOLDER = "E://uploadedfiles//";
 
-    @GetMapping("/posts/upload")
+    @GetMapping
     public String displayUpload(Model model) {
-        model.addAttribute("subject", "Upload");
-        return "poets/upload";
+        return "/posts/upload";
     }
 
     @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)

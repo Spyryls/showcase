@@ -120,5 +120,12 @@ public class AuthenticationController {
         setUserInSession(request.getSession(), theUser);
 
         return "redirect:/";
+
+
+    }
+
+    public String logout(HttpServletRequest request) {
+        request.getSession().invalidate();
+        return "redirect:/";
     }
 }
