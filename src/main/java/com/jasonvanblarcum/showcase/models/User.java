@@ -7,6 +7,9 @@ import javax.validation.constraints.Size;
 import org.dom4j.tree.AbstractEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name="users")
 public class User extends AbstractEntity {
@@ -25,6 +28,10 @@ public class User extends AbstractEntity {
     @NotNull
     private String lastName;
 
+    @NotNull
+    @Size(max = 500, message = "Your bio must be under 500 characters.")
+    private String bio;
+
     @NotNull(message = "Email is required")
     private String contactEmail;
 
@@ -33,12 +40,16 @@ public class User extends AbstractEntity {
 
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
+    @OneToMany
+    private final List<Artwork> artworks = new ArrayList<>();
+
     public User(){}
 
-    public User(String username, String firstName, String lastName, String contactEmail, String password) {
+    public User(String username, String firstName, String lastName, String bio, String contactEmail, String password) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.bio = bio;
         this.contactEmail = contactEmail;
         this.pwHash = encoder.encode(password);
 
@@ -55,6 +66,7 @@ public class User extends AbstractEntity {
                 ", username='" + username + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", bio='" + bio + '\'' +
                 ", contactEmail='" + contactEmail + '\'' +
                 ", pwHash='" + pwHash + '\'' +
                 '}';
@@ -73,6 +85,14 @@ public class User extends AbstractEntity {
     public String getUsername() { return username; }
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 
     public String getContactEmail() {

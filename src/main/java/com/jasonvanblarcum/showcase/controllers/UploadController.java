@@ -16,6 +16,9 @@ import java.io.FileOutputStream;
 @RequestMapping("/posts/upload")
 public class UploadController {
 
+    //TODO 1. Make it so artwork can be a) loaded from UploadController b) through ArtworkRepository and c) using the Artwork model
+    //TODO 2. Artwork should be viewed on user profile and gallery once loaded
+
     @Autowired
     private ArtworkRepository artworkRepository;
 

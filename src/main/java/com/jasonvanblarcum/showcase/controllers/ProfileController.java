@@ -1,6 +1,6 @@
 package com.jasonvanblarcum.showcase.controllers;
 
-import com.jasonvanblarcum.showcase.data.PostRepository;
+import com.jasonvanblarcum.showcase.data.ArtworkRepository;
 import com.jasonvanblarcum.showcase.models.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,15 +11,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-public class ForumController {
+public class ProfileController {
 
     @Autowired
-    private PostRepository postRepository;
+    ArtworkRepository artworkRepository;
 
-    @GetMapping("/forum")
-    public String displayForum(Model model) {
-        model.addAttribute("Post", postRepository.findAll());
-        model.addAttribute("title", "Forum");
-        return "forum";
+    @GetMapping("/profile")
+    public String displayProfile(Model model) {
+        model.addAttribute("Artwork", artworkRepository.findAll());
+        model.addAttribute("title", "Profile");
+        return "profile";
     }
 }
