@@ -1,14 +1,15 @@
 body, html {
-    font-family: "minion-pro", sans-serif;
+    font-family: "garamond", serif;
     margin: 0;
-    color: gray;
-    background-image: url("images/self_dark_scale.jpg");
+    color: #cb89dd;
+    background: #513658;
+    background-image: url("images/aware_logo_tulip.jpg")
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: auto;
-    width: 100%;
+    width: auto;
 }
 
 .register-container {
