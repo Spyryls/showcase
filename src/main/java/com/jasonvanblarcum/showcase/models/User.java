@@ -55,10 +55,6 @@ public class User extends AbstractEntity {
 
     }
 
-/*    //Serves to allow us to test PostServiceStubImpl ****MAKE SURE TO TAKE OUT****
-    public User(long l, String merry, Object o) {
-    }*/
-
     @Override
     public String toString() {
         return "User{" +
@@ -87,13 +83,8 @@ public class User extends AbstractEntity {
         this.username = username;
     }
 
-    public String getBio() {
-        return bio;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
+    public String getBio() { return bio;   }
+    public void setBio(String bio) { this.bio = bio;   }
 
     public String getContactEmail() {
         return contactEmail;

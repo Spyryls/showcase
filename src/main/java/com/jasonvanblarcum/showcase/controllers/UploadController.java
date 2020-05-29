@@ -16,6 +16,7 @@ public class UploadController {
 
     //TODO 1. Make it so artwork can be a) loaded from UploadController b) through ArtworkRepository and c) using the Artwork model
     //TODO 2. Artwork should be viewed on user profile and gallery once loaded
+    //TODO 3. Remove references to Post once template is removed
 
     @Autowired
     private ArtworkRepository artworkRepository;
@@ -24,10 +25,10 @@ public class UploadController {
 
     @GetMapping
     public String displayUpload(Model model) {
-        return "/posts/upload";
+        return "/upload";
     }
 
-    @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public String fileToUpload(@RequestParam("description") String description, @RequestParam("file") MultipartFile file) {
 
         String status = "";

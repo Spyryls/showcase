@@ -18,14 +18,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String displayHome(Model model) {
-        model.addAttribute("title", "J. VanBlarcum");
         return "index";
     }
 }
-
-/*
-    @GetMapping
-    public String displayHome(RedirectAttributes redirectAttributes) {
-        return "redirect:/home"; }
-
-}*/
