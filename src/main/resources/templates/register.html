@@ -12,37 +12,50 @@
         </label>
         <p class="error" th:errors="${registrationFormDTO.username}"></p>
     </div>
+
     <div class="form-group">
         <label>First Name
             <input class="form-control" th:field="${registrationFormDTO.firstName}" />
         </label>
         <p class="error" th:errors="${registrationFormDTO.firstName}"></p>
     </div>
+
     <div class="form-group">
         <label>Last Name
             <input class="form-control" th:field="${registrationFormDTO.lastName}" />
         </label>
         <p class="error" th:errors="${registrationFormDTO.lastName}"></p>
     </div>
+
+    <div class="form-group">
+        <label>Bio
+            <textarea class="form-control" th:field="${registrationFormDTO.bio}" />
+
+        </label>
+        <p class="error" th:errors="${registrationFormDTO.bio}"></p>
+    </div>
+
     <div class="form-group">
         <label>Contact Email
             <input class="form-control" th:field="${registrationFormDTO.contactEmail}" />
         </label>
         <p class="error" th:errors="${registrationFormDTO.contactEmail}"></p>
     </div>
+
     <div class="form-group">
         <label>Password
             <input class="form-control" th:field="${registrationFormDTO.password}" type="password" />
         </label>
         <p class="error" th:errors="${registrationFormDTO.password}"></p>
     </div>
+
     <div class="form-group">
         <label>Verify Password
             <input class="form-control" th:field="${registrationFormDTO.verifyPassword}" type="password" />
         </label>
     </div>
 
-    <input type="submit" class="btn btn-primary" value="Register" />
+    <input type="submit" class="btn btn-primary" a href="/profile" value="Register" />
 </form>
 
 </body>

@@ -21,19 +21,15 @@ body, html {
     transform: translate(-50%, -50%);
 }
 
+/* Header/logo Title */
 .header {
-  z-index: 1000;
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  padding: 80px;
   text-align: center;
-  background: transparent;
-  color: #ececec;
-  -webkit-font-smoothing: antialiased;
+  background: #1abc9c;
+  color: white;
 }
 
+/* Increase the font size of the heading */
 .header h1 {
   font-size: 40px;
 }
@@ -48,28 +44,68 @@ body, html {
     cursor: pointer;
 }
 
+/* these next bits are for the profile image */
+.profileimg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+  background-size: cover;
+  background-image: url('/images/self.jpg');
+  min-height: 100%;
+}
+
+.sidebar-profile {
+  height:100%;
+  width:200px;
+  background-color:#fff;
+  position:fixed!important;
+  z-index:1;
+  overflow:auto
+}
+
+.hide-med {
+  display:none!important
+}
+
+.hide-sm {
+  display:none!important
+}
+
+/* Style the navigation bar links */
 .navbar a {
   float: left;
   display: block;
-  background: transparent;
-  color: gray;
-  text-align: left;
+  color: white;
+  text-align: center;
   padding: 14px 20px;
   text-decoration: none;
 }
-
-.navbar a.right {
-  text-align: right;
-  float: right;
-}
-
+/* Change color on hover */
 .navbar a:hover {
+  background-color: #gray;
   text-shadow: white;
-  color: #FFC2CD;
+  color: #black;
 }
 
 .rounded {
     radius: 10px;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Placeholder Image */
+.fakeimg {
+  background-image: url('/images/aware_logo_tulip.jpg')
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
 }
 
 img {
@@ -110,8 +146,11 @@ body>main:after {
     clear: both;
 }
 
-footer {
-    color: #FFC2CD;
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
 }
 
 section {
@@ -193,11 +232,36 @@ textarea {
   background-color: #333;
 }
 
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* Column container */
 .row {
-  display: -ms-flexbox;
+  display: -ms-flexbox; /* IE10 */
   display: flex;
-  -ms-flex-wrap: wrap;
+  -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
 }
 
 .row:after {

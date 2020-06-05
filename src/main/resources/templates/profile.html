@@ -4,32 +4,48 @@
 
 <header th:replace="fragments :: header"></header>
 
-<body class="container">
+<body>
 
-<table class="table table-striped">
+<div class="header">
+    <h1>My Website</h1>
+    <p>A website created by me.</p>
+</div>
 
-    <thead>
-    <tr>
-        <th>USER NAME</th>
-        <th>SUBJECT</th>
-        <th>POST</th>
-        <th>ACTION</th>
-    </tr>
-    </thead>
+<div class="navbar">
+    <a href="#">Upload</a>
+    <a href="#">Gallery</a>
+    <a href="#" class="right">Log Out</a>
+</div>
 
-    <tr th:each="post : ${posts}">
-        <td th:text = "${post.author}"></td>
-        <td th:text = "${post.subject}"></td>
-        <td th:text = "${post.body}"></td>
+<div class="row">
+    <div class="side">
+        <h2>About </h2>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p>Some text about me that shall not be written at this time or possibly ever...</p>
+        <h3>More Text</h3>
+        <p>Lorem ipsum dolor sit ame.</p>
+        <div class="fakeimg" style="height:60px;">Image</div><br>
+        <div class="fakeimg" style="height:60px;">Image</div><br>
+        <div class="fakeimg" style="height:60px;">Image</div>
+    </div>
+    <div class="main">
+        <h2>TITLE HEADING</h2>
+        <h5>Title description, Dec 7, 2017</h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p>Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <br>
+        <h2>TITLE HEADING</h2>
+        <h5>Title description, Sep 2, 2017</h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p>Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+</div>
 
-        <td><a th:href="@{/posts/edit/{id}(id=${post.id})}">EDIT</a></td>
-    </tr>
-
-</table>
-
-<a href="/posts/upload" style="color: #FFC2CD;">Upload New Media</a>
-
-<footer th:replace="fragments :: site-footer"></footer>
+<div class="footer">
+    <h2>Footer</h2>
+</div>
 
 </body>
 </html>

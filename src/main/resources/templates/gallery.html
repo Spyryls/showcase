@@ -6,19 +6,7 @@
 <header th:replace="fragments :: header"></header>
 
 <body>
-<div class="container" style="background: transparent;">
-<form method="POST" action="/upload/uploadFile" enctype="multipart/form-data">
-    <label>Select a File to Upload:
-        <input class="rounded" type="file" name="file">
-    </label>
 
-    <label>File Description:
-        <input type="text" class="rounded" id="subject" name="subject" placeholder="Subject">
-    </label>
-
-    <input type="submit" class="btn btn-primary" value="Upload">Click to Upload File<br/>
-</form>
-</div>
 <div class="container" style="background: transparent;">
 
     <figure class="gallery_float">

@@ -4,9 +4,10 @@
     <div th:fragment="head">
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>J. VANBLARCUM
+        <title>A BIZARRE OF ART
             <div id="logged-in-info" style="text-align: right">
-                <span>Welcome, (user)
+                <span>
+                    <h3>Welcome, ${user.username}</h3>
                 <form method="post" th:action="@{/users/logout}">
                     <input type="submit" value="Logout"/>
                 </form>
@@ -26,10 +27,7 @@
         <h1 th:text = "${title}">J. VANBLARCUM</h1>
         <ul class="navbar a">
             <ul><a class="nav-link" href="/">HOME</a></ul>
-            <ul><a class="nav-link" href="/bio">BIO</a></ul>
             <ul><a class="nav-link" href="/gallery">GALLERY</a></ul>
-            <ul><a class="nav-link" href="../#contact">CONTACT</a></ul>
-            <ul><a class="nav-link" href="/forum">FORUM</a></ul>
             <ul><a class="nav-link" href="/login">LOGIN</a></ul>
         </ul>
         <br/>
