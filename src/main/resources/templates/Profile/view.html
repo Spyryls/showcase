@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container  body-content">
+<h1 th:text="${'Artist's Profile: ' + user.username}">Default Title</h1>
+
+<nav th:replace="fragments :: page-header"></nav>
+
+<div class="job-listing">
+    <p th:text="${'Name: ' + user.username}"></p>
+    <p th:text="${'Description: ' + artwork.title}"></p>
+    <p> Jobs:
+    <ul>
+        <li th:each="job : ${artwork.???}">
+            <a th:href="@{'/view/' + ${artwork.???}}" th:text="Welcome, ${user.username}"></a>
+        </li>
+    </ul>
+    </p>
+</div>

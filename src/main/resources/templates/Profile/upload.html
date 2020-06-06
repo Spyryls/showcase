@@ -14,6 +14,30 @@
         <input type="text" class="rounded" id="subject" name="subject" placeholder="Subject">
     </label>
 
+    <div class="form-group">
+        <label th:for="name">Title of Piece</label>
+        <input class="form-control" th:field="${artwork.title}" />
+        <span th:errors="${artwork.title}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="description">Media Used</label>
+        <input class="form-control" th:field="${artwork.media}" />
+        <span th:errors="${artwork.media}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="name">Description of Piece</label>
+        <input class="form-control" th:field="${artwork.description}" />
+        <span th:errors="${artwork.description}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="description">Year Created</label>
+        <input class="form-control" th:field="${artwork.year}" />
+        <span th:errors="${artwork.year}" class="error"></span>
+    </div>
+
     <input type="submit" class="btn btn-primary" value="Upload">Click to Upload File<br/>
 </form>
 
