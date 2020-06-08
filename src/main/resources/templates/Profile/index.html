@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<header th:replace="fragments :: header"></header>
+
 <body>
+
+<div class="header">
+    <h1>Artist's Shoppe</h1>
+    <p>Vincent VanGogh</p>
+</div>
+
+<div class="navbar">
+    <a href="#">Upload</a>
+    <a href="#">Gallery</a>
+    <a href="#" class="right">Log Out</a>
+</div>
+
+<div class="row">
+    <div class="side">
+        <h2>About </h2>
+        <div class="defaultimg" style="height:200px;">Image</div>
+        <p>Some text about me that shall not be written at this time or possibly ever...</p>
+        <h3>More Text</h3>
+        <p>Lorem ipsum dolor sit ame.</p>
+        <div class="defaultimg" style="height:60px;">Image</div><br>
+        <div class="defaultimg" style="height:60px;">Image</div><br>
+        <div class="defaultimg" style="height:60px;">Image</div>
+    </div>
+    <div class="main">
+        <h2>TITLE HEADING</h2>
+        <h5>Title description, Dec 7, 2017</h5>
+        <div class="defaultimg" style="height:200px;">Image</div>
+        <p>Some text..</p>
+        <p>Some text about me that shall not be written at this time or possibly ever...</p>
+        <br>
+        <h2>TITLE HEADING</h2>
+        <h5>Title description, Sep 2, 2017</h5>
+        <div class="defaultimg" style="height:200px;">Image</div>
+        <p>Some text..</p>
+        <p>Some text about me that shall not be written at this time or possibly ever...</p>
+    </div>
+
+
+</div>
+
+<div class="footer">
+    <h2>Footer</h2>
+</div>
 
 </body>
 </html>

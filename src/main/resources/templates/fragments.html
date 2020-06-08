@@ -4,6 +4,9 @@
     <div th:fragment="head">
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>A BIZARRE OF ART
             <div id="logged-in-info" style="text-align: right">
                 <span>
@@ -24,9 +27,9 @@
 <header th:fragment="header">
     <body>
     <nav th:fragment = "navigation">
-        <h1 th:text = "${title}">J. VANBLARCUM</h1>
         <ul class="navbar a">
             <ul><a class="nav-link" href="/">HOME</a></ul>
+            <ul><a class="nav-link" href="/profile/index">PROFILE(temp)</a></ul>
             <ul><a class="nav-link" href="/gallery">GALLERY</a></ul>
             <ul><a class="nav-link" href="/login">LOGIN</a></ul>
         </ul>
@@ -36,6 +39,5 @@
 </header>
 
 <footer th:fragment="site-footer">
-    &copy; Copyright 2020, All Rights Reserved for Jason VanBlarcum
 </footer>
 </html>

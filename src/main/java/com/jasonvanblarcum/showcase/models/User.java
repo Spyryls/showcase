@@ -14,9 +14,9 @@ import java.util.List;
 @Table(name="users")
 public class User extends AbstractEntity {
 
-    @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private Integer id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Integer id;
 
     @NotNull(message = "Username is required")
     @Size(min = 3, max = 50, message = "Your username must be between 3 and 50 characters.")
@@ -41,24 +41,25 @@ public class User extends AbstractEntity {
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     @OneToMany
+    @JoinColumn
     private final List<Artwork> artworks = new ArrayList<>();
 
     public User(){}
 
     public User(String username, String firstName, String lastName, String bio, String contactEmail, String password) {
+        super();
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.bio = bio;
         this.contactEmail = contactEmail;
         this.pwHash = encoder.encode(password);
-
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+//                ", id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
@@ -68,9 +69,6 @@ public class User extends AbstractEntity {
                 '}';
     }
 
-    public Integer getId() {
-        return id;
-    }
 
     public String getFirstName() { return firstName;  }
     public void setFirstName(String firstName) { this.firstName = firstName;  }

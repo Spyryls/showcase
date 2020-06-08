@@ -2,7 +2,7 @@ body, html {
     font-family: "garamond", serif;
     margin: 0;
     color: #cb89dd;
-    background: #513658;
+    background: gray;
     background-image: url("images/aware_logo_tulip.jpg")
     background-attachment: fixed;
     background-size: cover;
@@ -35,7 +35,7 @@ body, html {
 }
 
 .title {
-    background-color: black;
+    background-color: #cb89dd;
 }
 
 .form-control, .form-group {
@@ -48,7 +48,7 @@ body, html {
 .profileimg {
   background-position: center;
   background-repeat: no-repeat;
-  background-color: black;
+  background-color: #1a1f29;
   background-size: cover;
   background-image: url('/images/self.jpg');
   min-height: 100%;
@@ -57,7 +57,7 @@ body, html {
 .sidebar-profile {
   height:100%;
   width:200px;
-  background-color:#fff;
+  background-color:#2e3748;
   position:fixed!important;
   z-index:1;
   overflow:auto
@@ -75,15 +75,15 @@ body, html {
 .navbar a {
   float: left;
   display: block;
-  color: white;
+  color: #c6cad1;
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
 }
 /* Change color on hover */
 .navbar a:hover {
-  background-color: #gray;
-  text-shadow: white;
+  background-color: #343f52;
+  text-shadow: #c6cad1;
   color: #black;
 }
 
@@ -96,14 +96,14 @@ body, html {
 .side {
   -ms-flex: 30%; /* IE10 */
   flex: 30%;
-  background-color: #f1f1f1;
+  background-color: #cb89dd;
   padding: 20px;
 }
 
 /* Placeholder Image */
-.fakeimg {
+.defaultimg {
   background-image: url('/images/aware_logo_tulip.jpg')
-  background-color: #aaa;
+  background-color: #424F67;
   width: 100%;
   padding: 20px;
 }
