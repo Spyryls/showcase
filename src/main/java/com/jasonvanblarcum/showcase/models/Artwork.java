@@ -5,12 +5,12 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Artwork extends AbstractEntity {
+public class Artwork {
 
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
     @ManyToOne
     private User user;
@@ -34,13 +34,14 @@ public class Artwork extends AbstractEntity {
     }
 
     public Artwork(String image, String title, String media, String description, String year) {
-        super();
         this.image = image;
         this.title = title;
         this.media = media;
         this.description = description;
         this.year = year;
     }
+
+    public Integer getId() { return id;   }
 
     public String getImage() { return image; }
     public void setImage(String image) { this.image = image; }
