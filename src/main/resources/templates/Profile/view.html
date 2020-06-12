@@ -4,13 +4,14 @@
 
 <body class="container  body-content">
 <h1 th:text="${'Artist's Profile: ' + user.username}">Default Title</h1>
-
+<h1 th:text="${'Title: ' + artwork.title}"></h1>
 <nav th:replace="fragments :: page-header"></nav>
 
 <div class="job-listing">
-    <p th:text="${'Name: ' + user.username}"></p>
-    <p th:text="${'Description: ' + artwork.title}"></p>
-    <p> Jobs:
+    <p th:text="${'Title: ' + artwork.title}"></p>
+    <p th:text="${'Media: ' + artwork.media}"></p>
+    <p th:text="${'Description: ' + artwork.description}"></p>
+    <p th:text="${'Year Created: ' + artwork.year}"></p>
     <ul>
         <li th:each="job : ${artwork.???}">
             <a th:href="@{'/view/' + ${artwork.???}}" th:text="Welcome, ${user.username}"></a>

@@ -12,6 +12,19 @@ body, html {
     width: auto;
 }
 
+
+h1{
+  font-family: inherit;
+  font-weight: 1000;
+  line-height: 1.1;
+  color: pink;
+  text-shadow:
+  		-1px -1px 0 #000,
+  		1px -1px 0 #000,
+  		-1px 1px 0 #000,
+  		1px 1px 0 #000;
+}
+
 .register-container {
     left: 50%;
     top: 50%;

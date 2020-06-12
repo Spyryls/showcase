@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("profile")
 public class ProfileController {
@@ -21,11 +23,23 @@ public class ProfileController {
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping("/profile/{userId}")
-    public String displayProfile(Model model, @PathVariable int userId) {
-        model.addAttribute("Artwork", artworkRepository.findAll());
-        model.addAttribute("title", "Profile");
+    @RequestMapping("")
+    public String index(Model model) {
+        model.addAttribute("title", "Applicable Skills");
+        model.addAttribute("user", userRepository.findAll());
         return "profile/index";
+    }
+
+    @GetMapping("/profile/{artworkId}")
+    public String displayProfile(Model model, @PathVariable int userId) {
+        Optional<Artwork> optArtwork = artworkRepository.findById(userId);
+        if (optArtwork.isPresent()) {
+            Artwork artwork = optArtwork.get();
+            model.addAttribute("artwork", artwork);
+            return "profile/view";
+        } else {
+            return "redirect:../";
+        }
     }
 
     @GetMapping("upload")
