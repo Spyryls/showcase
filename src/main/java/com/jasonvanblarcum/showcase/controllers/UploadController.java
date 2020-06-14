@@ -25,7 +25,7 @@ public class UploadController {
 
     @GetMapping
     public String displayUpload(Model model) {
-        return "/upload";
+        return "/upload/uploadedFile";
     }
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)

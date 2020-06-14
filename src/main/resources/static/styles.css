@@ -1,18 +1,20 @@
+
 body, html {
-    font-family: "garamond", serif;
+    font-family: serif;*/
     margin: 0;
     color: #cb89dd;
-    background: gray;
+/*  background: gray;
     background-image: url("images/aware_logo_tulip.jpg")
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: auto;
-    width: auto;
+    width: auto;*/
 }
 
 
+/*
 h1{
   font-family: inherit;
   font-weight: 1000;
@@ -23,7 +25,7 @@ h1{
   		1px -1px 0 #000,
   		-1px 1px 0 #000,
   		1px 1px 0 #000;
-}
+}*/
 
 .register-container {
     left: 50%;
@@ -84,7 +86,7 @@ h1{
   display:none!important
 }
 
-/* Style the navigation bar links */
+ Style the navigation bar links
 .navbar a {
   float: left;
   display: block;
@@ -171,10 +173,10 @@ section {
     overflow: hidden;
     width: 95%;
     border-radius: 16px;
-/*    border: 3px solid gray;*/
+    border: 3px solid gray;
     padding: 10px;
     margin: 0  auto 25px auto;
-/*    box-shadow: 0 0 16px white;*/
+    box-shadow: 0 0 16px white;
     position: relative;
 }
 
@@ -319,6 +321,7 @@ textarea {
 
 */
 /* Parallax scrolling off for tablets and phones */
+/*
 
 @media only screen and (max-device-width: 1600px) {
 
@@ -332,3 +335,4 @@ textarea {
     min-height: 400px;
   }
 }
+*/

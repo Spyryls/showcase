@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <div th:fragment="head">
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>A BIZARRE OF ART</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" th:href="@{/styles.css}">
-    </div>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<head th:fragment="head">
+
+    <!-- Bootstrap stylesheets and script -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/css/techjobs.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+
+    <title th:text="'A Bizarre of Artists' + ${title == null ? '' : ' :: ' + title}">A Bizarre of Artists</title>
 </head>
 
 <body>
@@ -25,16 +25,19 @@
                 </span>
     </div>
     <body>
-    <nav th:fragment = "navigation">
-        <ul class="navbar a">
-            <ul><a class="nav-link" href="/">HOME</a></ul>
-            <ul><a class="nav-link" href="/profile/upload/ + ${user.id}">PROFILE(upload)</a></ul>
-            <ul><a class="nav-link" href="/gallery">GALLERY</a></ul>
-            <ul><a class="nav-link" href="/profile">PROFILE(temp)</a></ul>
-            <ul><a class="nav-link" href="/login">LOGIN</a></ul>
-        </ul>
-        <br/>
-    </nav>
+    <div th:fragment="navigation" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar a">
+                <a th:href="@{/}" class="navbar-brand">A Bizarre of Artists</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul><a th:href="@{/gallery}">gallery</a></ul>
+              <ul><a th:href="@{/profile}">profile</a></ul>
+              <ul><a th:href="@{/profile/upload}">upload</a></ul>
+              <ul><a th:href="@{/login}">login</a></ul>
+            </div>
+        </div>
+    </div>
     </body>
 </header>
 
