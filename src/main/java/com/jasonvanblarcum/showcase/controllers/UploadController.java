@@ -1,5 +1,7 @@
 package com.jasonvanblarcum.showcase.controllers;
 
+import java.io.IOException;
+import java.util.stream.Collectors;
 
 import com.jasonvanblarcum.showcase.data.ArtworkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
