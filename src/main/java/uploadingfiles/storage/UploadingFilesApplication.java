@@ -1,13 +1,13 @@
-package com.jasonvanblarcum.showcase;
+package uploadingfiles.storage;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ShowcaseApplication {
+public class UploadingFilesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ShowcaseApplication.class, args);
+		SpringApplication.run(UploadingFilesApplication.class, args);
 	}
 
 }

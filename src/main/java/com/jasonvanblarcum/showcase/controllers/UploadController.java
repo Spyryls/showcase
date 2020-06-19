@@ -5,15 +5,19 @@ import java.util.stream.Collectors;
 
 import com.jasonvanblarcum.showcase.data.ArtworkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
+import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import uploadingfiles.storage.StorageService;
 
-@RestController
-@RequestMapping("/posts/upload")
+import javax.annotation.Resource;
+
+@Controller
 public class UploadController {
 
     //TODO 1. Make it so artwork can be a) loaded from UploadController b) through ArtworkRepository and c) using the Artwork model
@@ -23,33 +27,37 @@ public class UploadController {
     @Autowired
     private ArtworkRepository artworkRepository;
 
-    private static String UPLOADED_FOLDER = "E://uploadedfiles//";
+    private final StorageService storageService;
 
-    @GetMapping
-    public String displayUpload(Model model) {
-        return "/upload/uploadedFile";
+    public UploadController(StorageService storageService) {
+        this.storageService = storageService;
+    }
+    @GetMapping("/")
+    public String listUploadedFiles(Model model) throws IOException {
+        model.addAttribute("files", storageService.loadAll().map(
+                path -> MvcUriComponentsBuilder.fromMethodName(UploadController.class,
+                        "serveFile", path.getFileName().toString()).build().toUri().toString())
+                .collect(Collectors.toList()));
+            return "uploadForm";
+        }
+
+        @GetMapping("/files/{filename:.+}")
+        @ResponseBody
+        public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
+            Resource file = (Resource) storageService.loadAsResource(filename);
+            return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
+                    "attachment; filename=\"" + file.getFilename() + "\"").body(file);
+        }
+        @PostMapping("/")
+        public String handleFileupload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
+        storageService.store(file);
+        redirectAttributes.addFlashAttribute("message",
+                "You successfully upload " + file.getOriginalFilename() + "!");
+        return "redirect:/";
     }
 
-    @RequestMapping(value = "/upload", method = RequestMethod.POST)
-    public String fileToUpload(@RequestParam("description") String description, @RequestParam("file") MultipartFile file) {
-
-        String status = "";
-            if (!file.isEmpty()) {
-                try {
-                    byte[] bytes = file.getBytes();
-                    File dir = new File(UPLOADED_FOLDER);
-                    if (!dir.exists())
-                        dir.mkdir();
-                    File uploadedFile = new File(dir.getAbsolutePath() + File.separator + file.getOriginalFilename());
-                    BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(uploadedFile));
-                    outputStream.write(bytes);
-                    outputStream.close();
-                    status = status + "Successfully Uploaded File=" + file.getOriginalFilename();
-                } catch (Exception e) {
-                    status = status + "Failed to Upload " + file.getOriginalFilename() + " " + e.getMessage();
-                }
-                }
-            return status;
+    @ExceptionHandler(StorageFileNotFoundException.class)
+    public ResponseEntity<?> handleStorageFileNotFound(StorageFileNotFoundException exc) {
+        return ResponseEntity.notFound().build();
     }
 }
-
