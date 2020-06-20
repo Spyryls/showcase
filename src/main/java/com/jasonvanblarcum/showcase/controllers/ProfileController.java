@@ -3,6 +3,7 @@ package com.jasonvanblarcum.showcase.controllers;
 import com.jasonvanblarcum.showcase.data.ArtworkRepository;
 import com.jasonvanblarcum.showcase.data.UserRepository;
 import com.jasonvanblarcum.showcase.models.Artwork;
+import com.jasonvanblarcum.showcase.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("profile")
+@RequestMapping("/profile")
 public class ProfileController {
 
     @Autowired
@@ -23,16 +24,21 @@ public class ProfileController {
     @Autowired
     UserRepository userRepository;
 
-    @RequestMapping("")
-    public String index(Model model) {
-        model.addAttribute("title", "Applicable Skills");
-        model.addAttribute("user", userRepository.findAll());
-        return "profile/index";
+    @GetMapping("/profile/{userId}")
+    public String displayUserProfile(Model model, @PathVariable Integer userId) {
+        Optional<User> optUser = userRepository.findById(userId);
+        if (optUser.isPresent()) {
+            User user = optUser.get();
+            model.addAttribute("user", user);
+            return "profile";
+        } else {
+            return "redirect:../";
+        }
     }
 
-    @GetMapping("/profile/{artworkId}")
-    public String displayProfile(Model model, @PathVariable int userId) {
-        Optional<Artwork> optArtwork = artworkRepository.findById(userId);
+    @GetMapping("/profile/view/{artworkId}")
+    public String displayArtwork(Model model, @PathVariable Integer artworkId) {
+        Optional<Artwork> optArtwork = artworkRepository.findById(artworkId);
         if (optArtwork.isPresent()) {
             Artwork artwork = optArtwork.get();
             model.addAttribute("artwork", artwork);

@@ -18,8 +18,8 @@
 <header th:fragment="header">
     <div id="logged-in-info" style="text-align: right">
                 <span>
-                    <h3>Welcome, ${user.username}</h3>
-                <form method="post" th:action="@{/user/logout}">
+                    <h3>Welcome, {user.username}</h3>
+                <form th:action="@{/logout}">
                     <input type="submit" value="Logout"/>
                 </form>
                 </span>
@@ -32,7 +32,7 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul><a th:href="@{/gallery}">gallery</a></ul>
-              <ul><a th:href="@{/profile}">profile</a></ul>
+              <ul th:if = "user != null"><a th:href="@{/profile/{user.id}}">profile</a></ul>
               <ul><a th:href="@{/profile/upload}">upload</a></ul>
               <ul><a th:href="@{/login}">login</a></ul>
             </div>
