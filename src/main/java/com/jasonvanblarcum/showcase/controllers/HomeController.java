@@ -27,15 +27,11 @@ public class HomeController {
     UserRepository userRepository;
 
     @GetMapping("/")
-    public String displayHome(HttpServletRequest request, Model model) {
-/*
-        HttpSession session = request.getSession();
-        User user = authenticationController.getUserFromSession(session);
-*/
+    public String displayHome(HttpSession session, String username, Model model) {
 
-        String username = request.getRemoteUser();
+        User currentUserSession = authenticationController.getUserFromSession(session);
         User user = userRepository.findByUsername(username);
-        model.addAttribute("user", user);
+        model.addAttribute("user", currentUserSession);
         return "index";
     }
 }
