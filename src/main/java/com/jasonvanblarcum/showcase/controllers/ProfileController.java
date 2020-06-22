@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/profile")
+@RequestMapping("/profile/{userId}")
 public class ProfileController {
 
     @Autowired
@@ -24,7 +24,7 @@ public class ProfileController {
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping("/profile/{userId}")
+    @GetMapping("/profile/{user.id}")
     public String displayUserProfile(Model model, @PathVariable Integer userId) {
         Optional<User> optUser = userRepository.findById(userId);
         if (optUser.isPresent()) {
