@@ -23,7 +23,7 @@ public class UploadController {
     @Autowired
     private ArtworkRepository artworkRepository;
 
-    private static String UPLOADED_FOLDER = "E://uploadedfiles//";
+    private static String UPLOADED_FOLDER = "E://xuploadedfiles//";
 
     @GetMapping
     public String displayUpload(Model model) {

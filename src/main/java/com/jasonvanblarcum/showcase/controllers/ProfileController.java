@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/profile/{userId}")
+@RequestMapping("profile")
 public class ProfileController {
 
     @Autowired
@@ -24,33 +24,33 @@ public class ProfileController {
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping("/profile/{user.id}")
-    public String displayUserProfile(Model model, @PathVariable Integer userId) {
-        Optional<User> optUser = userRepository.findById(userId);
+    @GetMapping(value = "/{id}")
+    public String displayUserProfile(@PathVariable("id") Integer id, Model model) {
+        Optional<User> optUser = userRepository.findById(id);
         if (optUser.isPresent()) {
             User user = optUser.get();
             model.addAttribute("user", user);
-            return "profile";
+            return "id";
         } else {
             return "redirect:../";
         }
     }
 
-    @GetMapping("/profile/view/{artworkId}")
-    public String displayArtwork(Model model, @PathVariable Integer artworkId) {
+/*    @GetMapping(value = "{artworkId}")
+    public String displayArtwork(@PathVariable Integer artworkId, Model model) {
         Optional<Artwork> optArtwork = artworkRepository.findById(artworkId);
         if (optArtwork.isPresent()) {
             Artwork artwork = optArtwork.get();
             model.addAttribute("artwork", artwork);
-            return "profile/view";
+            return "redirect:/view/{artworkId}";
         } else {
             return "redirect:../";
         }
-    }
+    }*/
 
-    @GetMapping("upload")
+    @GetMapping("/upload")
     public String displayUploadArtwork(Model model) {
         model.addAttribute(new Artwork());
-        return "profile/upload";
+        return "redirect:/profile/upload";
     }
 }
